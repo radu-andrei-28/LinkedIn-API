@@ -9,47 +9,40 @@ Before you get started …:</br></br>
 </br>
 
 <b>Step 1 - Initialize the SDK</b></br>
-Place the following <script> block into the <head> section of your HTML and provide all of the argument values that are relevant to your application's needs:
+Place the following script block into the <head> section of your HTML and provide all of the argument values that are relevant to your application's needs:</br>
 
-<script type="text/javascript" src="//platform.linkedin.com/in.js">
-    api_key:   [API_KEY] //your Client ID
-    onLoad:    [ONLOAD] //the names of your javascript function that you want the SDK to execute once it has successfully loaded itself.
-</script>
+        <script type="text/javascript" src="//platform.linkedin.com/in.js">
+            api_key: [API_KEY] 
+            onLoad: onLinkedInLoad
+        </script>
 
 <b>Step 2 - Create the "Sign In with LinkedIn" button</b></br>
-Place the following special <script> block in your HTML wherever you want the "Sign in with LinkedIn" button to be rendered:
+Place the following special script block in your HTML wherever you want the "Sign in with LinkedIn" button to be rendered.
 
-<script type="in/Login"></script>
-
+                            <script type="IN/Login"></script>
 <b>Step 3 - Handle async authentication & retrieve basic member data</b></br>
-Use the onLoad argument in the SDK's <script> block when you initialize the SDK to choose a function to execute once the SDK has finished loading.  This function should then setup the auth event listener, as shown below.  Once an auth event is thrown, it's safe to use the SDK's generic API call wrapper, IN.API.Raw(), to make a rest API call to fetch the member's basic profile data, completing the Sign In with LinkedIn process.
-
-<script type="text/javascript">
-    
-    // Setup an event listener to make an API call once auth is complete
-    function onLinkedInLoad() {
-        var data = IN.Event.on(IN, "auth", getProfileData);
-    }
-
-    // Handle the successful return from the API call
-    function onSuccess(data) {
-       $('#login').hide();
-       $('#content').show();
-       IN.API.Profile("me").result(ShowProfileData);
-    }
-
-    // Handle an error response from the API call
-    function onError(error) {
-        console.log(error);
-    }
-
-    // Use the API call wrapper to request the member's basic profile data
-    function getProfileData() {
-        IN.API.Raw("/people/~").result(onSuccess).error(onError);
-    }
-
-</script>
-
+Use the onLoad argument in the SDK's script block when you initialize the SDK to choose a function to execute once the SDK has finished loading. 
+                            
+                            function onLinkedInLoad() {
+                                var data = IN.Event.on(IN, "auth", getProfileData);
+                            }
+                            // Handle the successful return from the API call
+                            function onSuccess(data) {
+                                //console.log(data);
+                                $('#login').hide();
+                                $('#content').show();
+                                IN.API.Profile("me").result(ShowProfileData);
+                                getReviews();
+                            };
+                            // Handle an error response from the API call
+                            function onError(error) {
+                                console.log(error);
+                            };
+                            // Use the API call wrapper to request the member's basic profile data
+                            function getProfileData() {
+                                IN.API.Raw("/people/~").result(onSuccess).error(onError);
+                            }
+                            
 <b>Step 4 - Retrieve the profile data</b></br>
 During your authentication process, you will need to request the r_basicprofile member permission in order for your application to successfully make the API call to sign in with LinkedIn.
 
