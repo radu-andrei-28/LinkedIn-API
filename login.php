@@ -13,7 +13,7 @@ and open the template in the editor.
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="//platform.linkedin.com/in.js">
-            api_key: 77ajxx11060x03
+            api_key: ['Client Id']
             onLoad: onLinkedInLoad
         </script>
     </head>
@@ -97,45 +97,6 @@ and open the template in the editor.
                             }
                             ;
 
-                            function getReviews() {
-                                $.ajax({
-                                    type: "GET",
-                                    url: "reviews.json",
-                                    contentType: "application/json",
-                                    dataType: 'JSON',
-                                    success: function (data) {
-                                        var newHtml = '';
-                                        var ratingSum = 0;
-                                        var totalRates = 0;
-                                        $.each(data, function (i, item) {
-                                            totalRates = item.length;
-                                            $.each(item, function (i, element) {
-                                                var name = element.fullName;
-                                                var location = element.location;
-                                                var reviewTitle = element.reviewTitle;
-                                                var reviewBody = element.reviewBody;
-                                                var rating = element.starRating;
-                                                var imageUrl = element.imageUrl;
-                                                var postDate = element.postDate;
-                                                ratingSum += parseInt(element.starRating, 10);
-                                                newHtml += "<div class='review'><span class='hidden post-date'>" + postDate + "</span><div class='media-avatar'><div class='user-img'><img src=" + imageUrl + "></div><div class='user-info'><h3>" + name + "</h3><p>" + location + "</p></div></div><div class='media-info'><div class='media-review stars-review stars-" + rating + "'></div><div><h2>" + reviewTitle + "</h2><p>" + reviewBody + "</p></div></div></div>";
-                                            });
-                                        });
-                                        var average = ratingSum / totalRates;
-                                        function sortDescending(a, b) {
-                                            var date1 = $(a).find(".post-date").text();
-                                            var date2 = $(b).find(".post-date").text();
-                                            return date1 < date2;
-                                        }
-                                        ;
-                                        var profileRate = $('<img />', {src: 'img/' + average + '-stars.png'});
-                                        $(".stars-profile").html(profileRate);
-                                        $('#reviewsPanel').html(newHtml);
-                                        $('#reviewsPanel .review').sort(sortDescending).appendTo('#reviewsPanel');
-                                    }
-                                });
-                            }
-                            ;
                             function onLinkedInLoad() {
                                 var data = IN.Event.on(IN, "auth", getProfileData);
                             }
