@@ -1,0 +1,208 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 29, 2015, 1:42:48 PM
+    Author     : Radu
+*/
+body, html {
+  background: #f1f1f1; }
+
+#top {
+  background-color: white; }
+
+#content {
+  display: none; }
+
+#seeMore {
+  display: none;
+  background-color: white;
+  padding: 10px 25px; }
+
+.review {
+  background-color: white;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 100%; }
+
+#profile-img {
+  text-align: center; }
+
+#profile-info {
+  margin-left: 15px;
+  vertical-align: middle;
+  text-align: center; }
+
+#full-name {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 22px;
+  color: #434649;
+  padding-top: 5px;
+  max-height: 24px; }
+
+#headline {
+  font-size: 12px;
+  line-height: 14px;
+  color: #66696a;
+  max-height: 14px; }
+
+#profilePicture img {
+  border-radius: 80px;
+  height: 80px;
+  width: 80px; }
+
+body #login {
+  padding-top: 6%; }
+
+#login {
+  width: 320px;
+  padding: 8% 0 0;
+  margin: auto; }
+
+.login-container {
+  padding: 15px;
+  display: block;
+  text-align: center; }
+
+#login-btn:hover {
+  opacity: 0.7; }
+
+#loginform {
+  margin-top: 20px;
+  margin-left: 0;
+  padding: 26px 24px 46px;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13); }
+
+.login form, .login h1 a {
+  font-weight: 400;
+  overflow: hidden; }
+.login * {
+  margin: 0;
+  padding: 0; }
+
+#user-profile {
+  background-color: white;
+  padding: 15px 20px;
+  margin-bottom: 20px; }
+
+#loginform p {
+  margin-bottom: 0; }
+
+.login form .forgetmenot {
+  font-weight: 400;
+  float: left;
+  margin-bottom: 0; }
+
+svg {
+  width: 100%;
+  height: 100%; }
+
+path.slice {
+  stroke-width: 2px; }
+
+polyline {
+  opacity: .3;
+  stroke: black;
+  stroke-width: 2px;
+  fill: none; }
+
+.media-info img {
+  width: 160px;
+  display: inline-block; }
+
+p.total-reviews {
+  display: inline-block;
+  margin-left: 10px; }
+
+.latest {
+  background-color: white;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px; }
+
+.stars-review {
+  width: 260px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center; }
+
+.stars-1 {
+  background-image: url("img/1-stars.png"); }
+
+.stars-2 {
+  background-image: url("img/2-stars.png"); }
+
+.stars-3 {
+  background-image: url("img/3-stars.png"); }
+
+.stars-4 {
+  background-image: url("img/4-stars.png"); }
+
+.stars-5 {
+  background-image: url("img/5-stars.png"); }
+
+.stars-profile img {
+  width: 60%; }
+
+.login-title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #85898c;
+  padding: 10px 25px;
+  border-bottom: 1px solid #e0e2e3;
+  font-weight: bold; }
+
+.media-avatar {
+  min-height: 80px; }
+
+.user-img {
+  text-align: center; }
+
+.user-info {
+  text-align: center; }
+  .user-info h3 {
+    margin-top: 10px;
+    margin-bottom: 5px; }
+
+@media only screen and (min-width: 768px) {
+  .media-avatar {
+    display: inline-block;
+    width: 25%; }
+
+  #profile-img {
+    display: inline-block; }
+
+  #profile-info {
+    text-align: initial;
+    display: inline-block; }
+
+  .media-info {
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: top;
+    width: 70%; }
+
+  .user-info {
+    display: inline-block;
+    float: left;
+    margin-left: 20px;
+    text-align: initial; }
+
+  .media-avatar img {
+    display: inline-block;
+    float: left; }
+
+  .stars-review {
+    background-position: initial; } }
+
+/*# sourceMappingURL=output.css.map */
