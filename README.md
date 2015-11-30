@@ -1,4 +1,4 @@
-# LinkedIn-API
+# Sign In with LinkedIn
 This version includes the Sign in functionality using the LinkedIn API. Once signed in, the application can retrieve your profile data and the user can extract it in a CSV format
 
 Before you get started …:</br></br>
